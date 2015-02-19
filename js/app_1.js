@@ -22,10 +22,8 @@ var featureLayer = L.mapbox.featureLayer();
 featureLayer.on('ready', function(){
   this.setStyle({
     "stroke": "g777777",
-    "stroke-width": 2,
-    "fill": "g777777",
-    "fill-opacity": 0.5
+    "stroke-width": 2
   });
-  map.fitBounds(featureLayer.getBounds());
+  map.fitBounds(featureLayer.getbounds());
 });
 
