@@ -12,4 +12,20 @@ var map = L.mapbox.map('map', mapId);
 map.setView([39, -96], 4);
 
 //add data
-var datafileToAdd = 'data/bike Routes.geoJSON'
+var datafileToAdd = 'data/bike_routes.geojson';
+
+var featureLayer = L.mapbox.featureLayer();
+  
+  featureLayer.loadUrl(dataFileToAdd);
+  featureLayer.addTo(map);
+  
+featureLayer.on('ready' function(){
+  this.setStyle({
+    "stroke": "g777777",
+    "stroke-width": 2,
+    "fill": "g777777",
+    "fill-opacity": 0.5
+  });
+  map.fitBounds(featureLayer.getbounds());
+});
+
