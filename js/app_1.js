@@ -11,7 +11,7 @@ var map = L.mapbox.map('map', mapId);
 //Set the view of the map to the whole US
 map.setView([39, -96], 4);
 
-//add data
+////////////////////////////add data
 var dataFileToAdd = 'data/BikeRoutes.geoJSON';
 
 var featureLayer = L.mapbox.featureLayer();
@@ -27,3 +27,12 @@ featureLayer.on('ready', function(){
   map.fitBounds(featureLayer.getBounds());
 });
 
+////////////////////////////////
+
+//add popup
+
+featureLayer.on('ready', function(){
+  this.eachLayer(function(layer){
+    layer.bindPopup('Trail Name: ' + layer.feature.properties.name);
+  });
+});
