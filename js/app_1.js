@@ -12,7 +12,7 @@ var map = L.mapbox.map('map', mapId);
 map.setView([39, -96], 4);
 
 //add data
-var datafileToAdd = 'data/bike_routes.geojson';
+var dataFileToAdd = 'data/bike_routes.geojson';
 
 var featureLayer = L.mapbox.featureLayer();
   
