@@ -31,8 +31,34 @@ featureLayer.on('ready', function(){
 
 //add popup
 
-featureLayer.on('ready', function(){
+//featureLayer.on('ready', function(){
+  //this.eachLayer(function(layer){
+    //layer.bindPopup('Trail Name: ' + layer.feature.properties.name);
+  //});
+//});
+
+//clear the panel
+map.on('click', function(){
+  $('#info').fadeOut(200);
+  $('#info').empty();
+});
+
+//handle click on route
+var clickHandler = function(e){
+  $('#info').empty();
+  
+  var feature = e.target.feature;
+  
+  $('#info').fadeIn(400), function(){
+    var info = '';
+    info = '<div>Check out this bike trail called ' + feature.properties.name + '</div>'
+    $('#info').append(info);
+  });
+}
+
+// register the click handler
+featureLayer.on('ready',function(){
   this.eachLayer(function(layer){
-    layer.bindPopup('Trail Name: ' + layer.feature.properties.name);
+    layer.on('click', clickHandler);
   });
 });
