@@ -24,6 +24,6 @@ featureLayer.on('ready', function(){
     "stroke": "g777777",
     "stroke-width": 2
   });
-  map.fitBounds(featureLayer.getbounds());
+  map.fitBounds(featureLayer.getBounds());
 });
 
