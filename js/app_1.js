@@ -16,7 +16,7 @@ var datafileToAdd = 'data/bike_routes.geojson';
 
 var featureLayer = L.mapbox.featureLayer();
   
-  featureLayer.loadUrl(dataFileToAdd);
+  featureLayer.loadURL(dataFileToAdd);
   featureLayer.addTo(map);
   
 featureLayer.on('ready', function(){
