@@ -26,6 +26,6 @@ featureLayer.on('ready', function(){
     "fill": "g777777",
     "fill-opacity": 0.5
   });
-  map.fitBounds(featureLayer.getbounds());
+  map.fitBounds(featureLayer.getBounds());
 });
 
