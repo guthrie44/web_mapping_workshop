@@ -49,15 +49,15 @@ var clickHandler = function(e){
   
   var feature = e.target.feature;
   
-  $('#info').fadeIn(400), function(){
+  $('#info').fadeIn(400, function(){
     var info = '';
-    info = '<div>Check out this bike trail called ' + feature.properties.name + '</div>'
+    info = '<div>Check out this bike trail called ' + feature.properties.name + '</div>';
     $('#info').append(info);
   });
 }
 
 // register the click handler
-featureLayer.on('ready',function(){
+featureLayer.on('ready', function(){
   this.eachLayer(function(layer){
     layer.on('click', clickHandler);
   });
